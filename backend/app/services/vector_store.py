@@ -21,10 +21,13 @@ class ChromaManager:
             ids.append(doc_id)
             documents.append(chunk["text"])
             metadatas.append(chunk["metadata"])
+            
+        embeddings = self.embeddings.embed_documents(documents)
 
         self.collection.add(
             documents=documents,
             metadatas=metadatas,
-            ids=ids
+            ids=ids,
+            embeddings=embeddings
         )
         return len(ids)
