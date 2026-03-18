@@ -3,8 +3,8 @@ from pydantic_settings import BaseSettings
 import httpx
 import os
 from dotenv import load_dotenv
-
 from app.api import ingest , chat
+from fastapi.middleware.cors import CORSMiddleware
 
 load_dotenv()
 
@@ -13,6 +13,14 @@ class Settings(BaseSettings):
 
 settings = Settings()
 app = FastAPI(title="Lumen API", version="1.0.0")
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"], # In production, you'd restrict this to your domain
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 app.include_router(ingest.router, prefix="/api/v1/ingest", tags=["Ingestion"])
 app.include_router(chat.router, prefix="/api/v1/chat", tags=["Chat"]) 
