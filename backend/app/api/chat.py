@@ -25,7 +25,14 @@ async def ask_question(request: ChatRequest):
         return {
             "question": request.query,
             "answer": answer,
-            "sources": [chunk["metadata"] for chunk in retrieved_chunks]
+            "sources": [
+                {
+                    "page_number": chunk["metadata"]["page_number"],
+                    "source": chunk["metadata"]["source"],
+                    "text_preview": chunk["text"][:200] + "..." # Shows the first 200 chars
+                } 
+                for chunk in retrieved_chunks
+            ]
         }
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))

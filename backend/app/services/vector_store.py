@@ -24,7 +24,7 @@ class ChromaManager:
             
         embeddings = self.embeddings.embed_documents(documents)
 
-        self.collection.add(
+        self.collection.upsert(
             documents=documents,
             metadatas=metadatas,
             ids=ids,
