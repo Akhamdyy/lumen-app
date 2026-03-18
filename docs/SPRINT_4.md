@@ -1,6 +1,6 @@
 # Phase 2: The RAG Core | Sprint 4: Retrieval & Generation
-**Status:** ⚪ Not Started
-**Target Date:** TBD
+**Status:** 🟢 Completed
+**Target Date:** March 18, 2026
 
 ## 🎯 Sprint Goal
 Implement the core RAG logic. Build a retrieval service to fetch relevant document chunks from ChromaDB, and a generation service that uses a local LLM (via Ollama) to answer user queries based strictly on the retrieved context.
