@@ -1,6 +1,6 @@
 # Phase 3: The Web Interface | Sprint 5: Next.js Foundation & Upload UI
-**Status:** ⚪ Not Started
-**Target Date:** TBD
+**Status:** 🟢 Completed
+**Target Date:** March 18, 2026
 
 ## 🎯 Sprint Goal
 Initialize the Next.js frontend, configure Tailwind CSS, and build the Document Upload component that communicates with our FastAPI ingestion endpoint.
