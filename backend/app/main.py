@@ -4,6 +4,8 @@ import httpx
 import os
 from dotenv import load_dotenv
 
+from app.api import ingest
+
 load_dotenv()
 
 class Settings(BaseSettings):
@@ -11,6 +13,8 @@ class Settings(BaseSettings):
 
 settings = Settings()
 app = FastAPI(title="Lumen API", version="1.0.0")
+
+app.include_router(ingest.router, prefix="/api/v1/ingest", tags=["Ingestion"])
 
 @app.get("/health")
 async def health_check():

@@ -3,3 +3,6 @@ uvicorn[standard]==0.27.1
 pydantic-settings==2.2.1
 python-dotenv==1.0.1
 httpx==0.27.0
+PyMuPDF==1.23.26
+langchain-text-splitters==0.0.1
+python-multipart==0.0.9
