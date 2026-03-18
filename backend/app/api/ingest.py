@@ -2,8 +2,8 @@ from fastapi import APIRouter, UploadFile, File, HTTPException
 import os
 import shutil
 from app.services.pdf_parser import PDFProcessor
-from app.services.chunker import SemanticChunker
-from app.services.vector_store import ChromaManager
+from app.core.chunking import SemanticChunker
+from app.core.vector_store import ChromaManager
 
 router = APIRouter()
 

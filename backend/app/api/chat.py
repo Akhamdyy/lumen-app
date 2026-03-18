@@ -1,7 +1,7 @@
 from fastapi import APIRouter, HTTPException
 from pydantic import BaseModel
-from app.services.retriever import DocumentRetriever
-from app.services.llm_service import LLMGenerator
+from app.core.retriever import DocumentRetriever
+from app.core.llm_chain import LLMGenerator
 
 router = APIRouter()
 
